@@ -35,8 +35,8 @@ class PersistanceManager: ObservableObject {
         do {
             savedEntities = try viewContext.fetch(request)
             return savedEntities
-        } catch let error {
-            // handle error
+        } catch {
+            print("ERROR: Cant fetch")
         }
         return nil 
     }
@@ -52,7 +52,6 @@ class PersistanceManager: ObservableObject {
     
     func saveProfile(profiles: [Profile]) {
         removeAllProfiles()
-        saveContext()
         transform(profiles)
         saveContext()
     }
@@ -79,16 +78,14 @@ class PersistanceManager: ObservableObject {
     }
     
     func updateProfileAcceptance(for email: String, isAccepted: Bool) throws {
-        let context = container.viewContext
         let request = NSFetchRequest<ProfileModel>(entityName: "ProfileModel")
         request.predicate = NSPredicate(format: "email == %@", email)
-        
         do {
-            let profiles = try context.fetch(request)
+            let profiles = try viewContext.fetch(request)
             if let profileToUpdate = profiles.first {
                 profileToUpdate.didAccept = isAccepted
                 profileToUpdate.didSelect = true
-                try context.save()
+                try viewContext.save()
             } else { //TODO: Can handle this case too
                 print("ERROR: No user with this email found")
             }

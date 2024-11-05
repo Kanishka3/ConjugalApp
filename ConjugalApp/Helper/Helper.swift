@@ -15,8 +15,8 @@ enum Helpers {
 }
 
 enum GlobalConstants {
-    static let sidePadding = CGFloat(10)
-    static let aspectRatio = 1.2
+    static let sidePadding = CGFloat(24)
+    static let cornerRadius = CGFloat(16)
 }
 
 

@@ -19,10 +19,10 @@ class ViewModel: ObservableObject {
     let networkMonitor = NetworkMonitor()
     
     func getProfiles() async {
-        if networkMonitor.isConnected {
+//        if networkMonitor.isConnected {
+        if false {
             await fetchProfiles()
         } else {
-            persistanceManager.fetchProfiles()
             await saveFromCache()
         }
     }
@@ -32,7 +32,7 @@ class ViewModel: ObservableObject {
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                profiles = []
+                profiles.removeAll()
                 return
             }
             let decodedResponse = try JSONDecoder().decode(ResponseData.self, from: data)
@@ -40,20 +40,20 @@ class ViewModel: ObservableObject {
             persistanceManager.saveProfile(profiles: profiles)
             await saveFromCache()
         } catch {
-            profiles = []
+            profiles.removeAll()
         }
     }
     
-    func changeStatus(for profile: Profile, isAccepted: Bool) throws {
-        try persistanceManager.updateProfileAcceptance(for: profile.email, isAccepted: isAccepted)
-        objectWillChange.send()
+    func changeStatus(for email: String, isAccepted: Bool) throws {
+        try persistanceManager.updateProfileAcceptance(for: email, isAccepted: isAccepted)
     }
     
     private func saveFromCache() async {
         guard let res = persistanceManager.fetchProfiles() else { return }
-        await MainActor.run {
-            displayItems = res
-            print(displayItems)
+        DispatchQueue.main.async {
+            self.displayItems = res
+            self.objectWillChange.send()
+            print(self.displayItems)
         }
     }
 }

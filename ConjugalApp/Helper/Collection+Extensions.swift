@@ -8,6 +8,7 @@
 import Foundation
 
 public extension MutableCollection {
+    /// Safely getting the array items 
     subscript (safe index: Index) -> Element? {
         get {
             guard index >= startIndex, index < endIndex else {
