@@ -19,8 +19,7 @@ class ViewModel: ObservableObject {
     let networkMonitor = NetworkMonitor()
     
     func getProfiles() async {
-//        if networkMonitor.isConnected {
-        if false {
+        if networkMonitor.isConnected {
             await fetchProfiles()
         } else {
             await saveFromCache()
