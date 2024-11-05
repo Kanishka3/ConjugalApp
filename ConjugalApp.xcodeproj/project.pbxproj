@@ -6,13 +6,34 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AC96DF7E2CD9976900E761F0 /* ProfileModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96DF7D2CD9976900E761F0 /* ProfileModel+CoreDataProperties.swift */; };
+		AC96DF7F2CD9976900E761F0 /* ProfileModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96DF7C2CD9976900E761F0 /* ProfileModel+CoreDataClass.swift */; };
+		ACA6E5A92CD9464700133A95 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = ACA6E5A82CD9464700133A95 /* SDWebImageSwiftUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		AC96DF7C2CD9976900E761F0 /* ProfileModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AC96DF7D2CD9976900E761F0 /* ProfileModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ACD400EA2CD9298B001C57DE /* ConjugalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConjugalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		ACC130362CD92CBF00187DA0 /* Exceptions for "ConjugalApp" folder in "ConjugalApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = ACD400E92CD9298B001C57DE /* ConjugalApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		ACD400EC2CD9298B001C57DE /* ConjugalApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				ACC130362CD92CBF00187DA0 /* Exceptions for "ConjugalApp" folder in "ConjugalApp" target */,
+			);
 			path = ConjugalApp;
 			sourceTree = "<group>";
 		};
@@ -23,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA6E5A92CD9464700133A95 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +54,8 @@
 		ACD400E12CD9298B001C57DE = {
 			isa = PBXGroup;
 			children = (
+				AC96DF7C2CD9976900E761F0 /* ProfileModel+CoreDataClass.swift */,
+				AC96DF7D2CD9976900E761F0 /* ProfileModel+CoreDataProperties.swift */,
 				ACD400EC2CD9298B001C57DE /* ConjugalApp */,
 				ACD400EB2CD9298B001C57DE /* Products */,
 			);
@@ -65,6 +89,7 @@
 			);
 			name = ConjugalApp;
 			packageProductDependencies = (
+				ACA6E5A82CD9464700133A95 /* SDWebImageSwiftUI */,
 			);
 			productName = ConjugalApp;
 			productReference = ACD400EA2CD9298B001C57DE /* ConjugalApp.app */;
@@ -94,6 +119,9 @@
 			);
 			mainGroup = ACD400E12CD9298B001C57DE;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				ACA6E5A72CD9464700133A95 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ACD400EB2CD9298B001C57DE /* Products */;
 			projectDirPath = "";
@@ -119,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC96DF7E2CD9976900E761F0 /* ProfileModel+CoreDataProperties.swift in Sources */,
+				AC96DF7F2CD9976900E761F0 /* ProfileModel+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,9 +284,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ConjugalApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConjugalApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -282,9 +312,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ConjugalApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConjugalApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ACA6E5A72CD9464700133A95 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ACA6E5A82CD9464700133A95 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACA6E5A72CD9464700133A95 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACD400E22CD9298B001C57DE /* Project object */;
 }
