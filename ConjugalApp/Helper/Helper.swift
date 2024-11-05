@@ -17,6 +17,7 @@ enum Helpers {
 enum GlobalConstants {
     static let sidePadding = CGFloat(24)
     static let cornerRadius = CGFloat(16)
+    static let url = "https://randomuser.me/api/?results=10"
 }
 
 

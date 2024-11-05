@@ -9,8 +9,6 @@ import Foundation
 
 class ViewModel: ObservableObject {
     
-    private let baseUrl = "https://randomuser.me/api/?results=10"
-    
     var profiles = [Profile]()
     
     @Published var displayItems = [ProfileModel]()
@@ -27,7 +25,7 @@ class ViewModel: ObservableObject {
     }
     
     func fetchProfiles() async {
-        guard let url = URL(string: baseUrl) else { return }
+        guard let url = URL(string: GlobalConstants.url) else { return }
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
