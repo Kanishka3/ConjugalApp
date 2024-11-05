@@ -63,7 +63,7 @@ struct Profile: Codable {
 }
 
 extension Profile {
-    var displayName: String { "\(name.first) \(name.last)" }
+    var displayName: String { "\(name.first) \(name.last), \(dob.age)" }
     
     var displayAddress: String { "\(location.street.displayName) \(location.city)" }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel = ViewModel()
+    @StateObject var toastManager = ToastManager.shared
+    
     
     var body: some View {
         NavigationView {
@@ -31,6 +33,10 @@ struct ContentView: View {
                     }
                 }
             }.scrollIndicators(.hidden)
+              .overlay(alignment: .bottom, content: {
+                    ToastView(isToastVisible: $toastManager.isToastVisible,
+                              message: toastManager.toastMessage ?? "")
+                })
         }
     }
 }

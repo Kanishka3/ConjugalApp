@@ -36,7 +36,7 @@ class PersistanceManager: ObservableObject {
             savedEntities = try viewContext.fetch(request)
             return savedEntities
         } catch {
-            print("ERROR: Cant fetch")
+            ToastManager.shared.showToast("DB Operation Failed")
         }
         return nil 
     }
@@ -47,6 +47,7 @@ class PersistanceManager: ObservableObject {
            } catch {
                viewContext.rollback()
                print(error.localizedDescription)
+               ToastManager.shared.showToast("DB Operation Failed")
            }
        }
     
